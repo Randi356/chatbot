@@ -2,6 +2,8 @@
 # credits by @FFmpegNotInstalled
 # you fork editing // don't remove
 import telebot
+import os
+import pafy
 
 bot = telebot.TeleBot("1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8")
 
@@ -22,10 +24,17 @@ def send_photo(message):
 
 @bot.message_handler(commands=['audio'])
 def send_audio(message):
-        bot.send_audio(message.chat.id, 'upload_audio')
-        audio = open('mp3/test.mp3', 'rb')
-        bot.send_audio(message.chat.id, audio, reply_to_message_id=message_id)
-        audio.close()
+        url = pafy.new(message.text.replace("/mp3", ""))
+        bot.send_message(message.chat.id, url.title)
+        bot.send_message(message.chat.id, "Please Wait Upload....")
+        fuk = url.getbestaudio()
+        fuk.download(f"{url.title}.mp3")
+
+        for i in os.listdir():
+           if i.endswith(".mp3"):
+               print(i)
+               bot.send_audio(message.chat.id, open(i, "rb"))
+               os.remove(i)
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
