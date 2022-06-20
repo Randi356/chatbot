@@ -33,7 +33,7 @@ def send_audio(message):
 
 @bot.message_handler(commads=['kontol'])
 def kontol_message(message):
-  bot.send_message(message.chat.id, "tolol lu muka kek kontol")
+        bot.send_message(message.chat.id, "tolol lu muka kek kontol")
 
 apakah = [
        "komtol",
