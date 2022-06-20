@@ -2,13 +2,6 @@
 # credits by @FFmpegNotInstalled
 # you fork editing // don't remove
 import telebot
-import time
-from urllib import request
-
-url='http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919672_584633251672188_179950734_n.jpg'
-f = open('out.jpg','wb')
-f.write(urllib.request.urlopen(url).read())
-f.close()
 
 bot = telebot.TeleBot("1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8")
 
