@@ -7,48 +7,22 @@ import os
 import pafy
 import logging
 import random
-import urllib3.request
+
 
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
 
-api = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
-bot = TeleBot(api)
-
-url = 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919672_584633251672188_179950734_n.jpg'
-f = open('out.jpg','wb')
-f.write(urllib3.request.url(url).read())
-f.close()
-
-def listener(*messages):
-    for m in messages:
-        chat_id = m.chat.id
-        if m.content_type == 'text':
-            text = m.text
-            msgid = m.message_id
-            if text.startswith('/photo'):
-                bot.send_chat_action(chat_id, 'upload_photo')
-                img = open('out.jpg', 'rb')
-                bot.send_photo(chat_id, img, reply_to_message_id=msgid)
-                img.close()
-
-all_photo = [
-    "https://telegra.ph/file/541d3310d646dadeb8341.jpg",
-    "https://telegra.ph/file/434aaf1f3ee606977b8f0.jpg"
-]
-
+TOKEN = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
+bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
 
-@bot.message_handler(commans=['wibu'])
-def wibu_message(welcome):
-        while True:
-            with open(random.choice(all_photo), 'rb') as photo:
-                bot.send_photo(message.chat.id, photo)
-            photo.close()
-            time.sleep(1500)
+@bot.message_handler(commads=['photo'])
+def send_photo(message):
+        photo_url <- "https://www.gstatic.com/webp/gallery/1.webp"
+        bot.send_photo(message.chat.id, photo=photo_url)
 
 @bot.message_handler(commands=['link'])
 def link(message):
@@ -84,7 +58,6 @@ def link(message):
 
 
 # bot run
-bot.set_update_listener(listener)
 bot.polling()
 while True:
     time.sleep(1)
