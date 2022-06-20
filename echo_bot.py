@@ -25,7 +25,21 @@ def help(message):
 
 @bot.message_handler(commads=['kontol'])
 def kontol_message(message):
-  bot.send_message(message.chat.id, "tolol lu muka kontol")
+  bot.send_message(message.chat.id, "tolol lu muka kek kontol")
+
+apakah = [
+       "komtol",
+       "ga nanya",
+       "mmksut",
+       "hah",
+       "anak goblok"
+
+]
+
+@bot.message_handler(ommands=['apakah'])
+def apakah_ask(message):
+  chatid = message.chat.id
+  bot.send_message(chatid, apakah)
 
 @bot.message_handler(commands=['bokep'])
 def bokep_message(message):
