@@ -6,6 +6,7 @@ from telebot import *
 import os
 import pafy
 import logging
+import random
 
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
@@ -26,8 +27,9 @@ def send_welcome(message):
 @bot.message_handler(commans=['wibu'])
 def wibu_message(welcome):
         while True:
-            with open(random.choice(all_photo), 'rb') as photo:
-                bot.send_audio(message.chat.id, photo)
+            with open( random.choice(all_photo), 'rb') as photo:
+            bot.send_audio(message.chat.id, photo)
+            audio.close()
             time.sleep(1500)
 
 @bot.message_handler(commands=['link'])
