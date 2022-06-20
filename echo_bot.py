@@ -23,6 +23,15 @@ def send_welcome(message):
 def help(message):
 	bot.send_message(message.chat.id, "helping click @RendyProjects")
 
+@bot.message_handler(commads=['kontol'])
+def kontol_message(message):
+  bot.send_message(message.chat.id, "tolol lu muka kontol")
+
+@bot.message_handler(commands=['bokep'])
+def bokep_message(message):
+  chatid = message.chat.id
+  bot.send_message(chatid, "nih link @bokepindo")
+
 # stringsList = {"Name": "Rendy", "languagues": "Python", "API": "pyTelegramBotAPI"}
 # crossIcon = u"\u274c"
 
