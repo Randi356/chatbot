@@ -26,7 +26,7 @@ def send_welcome(message):
 def wibu_message(welcome):
         while True:
             with open(random.choice(all_audio), 'rb') as audio:
-                bot.send_audio(message.chat.id audio)
+                bot.send_audio(message.chat.id, audio)
             time.sleep(3000)
 
 @bot.message_handler(commands=['link'])
