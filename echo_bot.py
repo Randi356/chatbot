@@ -19,6 +19,10 @@ bot = TeleBot(TOKEN)
 def send_welcome(message):
 	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
 
+@bot.message_handler(commands=['help'])
+def help(message):
+	bot.send_message(message.chat.id, "helping click @RendyProjects")
+
 # stringsList = {"Name": "Rendy", "languagues": "Python", "API": "pyTelegramBotAPI"}
 # crossIcon = u"\u274c"
 
