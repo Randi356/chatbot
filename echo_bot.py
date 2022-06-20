@@ -28,7 +28,7 @@ def send_welcome(message):
 def wibu_message(welcome):
         while True:
             with open(random.choice(all_photo), 'rb') as photo:
-            bot.send_photo(message.chat.id, photo)
+                bot.send_photo(message.chat.id, photo)
             photo.close()
             time.sleep(1500)
 
