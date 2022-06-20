@@ -1,27 +1,35 @@
-
 # credits by @FFmpegNotInstalled
-# you fork editing // don't remove
-from telebot import *
-#from youtubesearchpython import VideoSearch
+# DON'T REMOVE CREDITS FUCK
+# YOUR CODE NOOB ?
+import audioop
 import os
-import pafy
-import logging
-import random
-import yfinance as yf
+from telebot import *
 
-# display errors 
-telebot.logger.setLevel(logging.DEBUG) 
-
-TOKEN = "YOUR_TOKEN_BOTFATHER"
+TOKEN = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
 bot = TeleBot(TOKEN)
 
+telebot.logger.setLevel(logging.DEBUG) 
+
 @bot.message_handler(commands=['start'])
-def send_welcome(message):
-	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
+def welcome(message):
+	me = message.from_user.id
+	user = message.from_user.first_name
+	fuck = message.from_user.last_name
+	chatid = message.chat.id
+	bot.send_message(chatid, "Name : {}\n{}ID Hack : {}\nSelamat datang!".format(user,fuck,me))
 
 @bot.message_handler(commands=['help'])
-def help(message):
-	bot.send_message(message.chat.id, "helping click @RendyProjects")
+def send_welcome(message):
+	bot.send_message(message.chat.id, "why helping")
+
+@bot.message_handler(commands=['photo'])
+def send_photo(message):
+	bot.send_photo(message.chat.id, open('media/photo.jpg', 'rb'))
+
+@bot.message_handler(commands=['audio'])
+def send_audio(message):
+	bot.send_audio(message.chat.id, open('audio/audio.mp3', 'rb'))
+
 
 @bot.message_handler(commads=['kontol'])
 def kontol_message(message):
@@ -110,12 +118,6 @@ def send_price(message):
   else:
     bot.send_message(message.chat.id, "No data!?")
 
-
-@bot.message_handler(commads=['audio'])
-def text(message):
-        chatid = message.chat.id
-        bot.send_audio(chatid, open('test.mp3', 'rb'))
-
 @bot.message_handler(commands=['link'])
 def link(message):
         bot.send_message(message.chat.id, "Link https://t.me/pantekyks")
@@ -150,6 +152,5 @@ def link(message):
 
 
 # bot run
+print("Bot Running")
 bot.polling()
-while True:
-    time.sleep(1)
