@@ -12,3 +12,13 @@ def send_welcome(message):
 ```
 https://github.com/eternnoir/pyTelegramBotAPI
 ```
+
+# [NEW] TELEGRAM CHATBOT
+```
+COMING SOON
+[new] deploy chatbot via vps
+[new] tambah kosakata
+[new] /id@username_bot
+[new] type /start
+[new] auto filter
+```
