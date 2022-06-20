@@ -16,7 +16,7 @@ def link(message):
 @bot.message_handler(commands=['photo'])
 def send_photo(message):
         bot.send_chat_action(message.chat.id, 'upload_photo')
-        img = open('out.jpg', 'rb')
+        img = open('https://images.app.goo.gl/PfE4q3rgnHnYAWix6', 'rb')
         bot.send_photo(message.chat.id, img, reply_to_message_id=message.message_id)
         img.close()
 
