@@ -15,13 +15,6 @@ def send_welcome(message):
 def link(message):
         bot.send_message(message.chat.id, "Link https://t.me/pantekyks")
 
-@bot.message_handler(commands=['photo'])
-def send_photo(message):
-        bot.send_chat_action(message.chat.id, 'upload_photo')
-        img = open('https://images.app.goo.gl/PfE4q3rgnHnYAWix6', 'rb')
-        bot.send_photo(message.chat.id, img, reply_to_message_id=message.message_id)
-        img.close()
-
 @bot.message_handler(commands=['audio'])
 def send_audio(message):
         url = pafy.new(message.text.replace("/mp3", ""))
@@ -36,8 +29,5 @@ def send_audio(message):
                bot.send_audio(message.chat.id, open(i, "rb"))
                os.remove(i)
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-	bot.reply_to(message, message.text)
-
+# bot run
 bot.infinity_polling()
