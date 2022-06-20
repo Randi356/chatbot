@@ -19,7 +19,8 @@ hai bot$                        = Hai %nama;
 halo$                           = Hai;
 ^hai$                           = Hai juga;
 ^bot$                           = ada yang bisa saya bantu?;
-^bokep                          = bokep goblok %nama;
+^bokep$                         = bokep goblok %nama;
+^tolong link$ | Link$           = jangan lupa join grup @pantekyks;
 
 ^sekarang jam berapa$ |
 ^jam berapa sekarang$ |
