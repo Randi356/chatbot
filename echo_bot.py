@@ -16,13 +16,13 @@ def send_welcome(message):
 def link(message):
         bot.send_message(message.chat.id, "Link https://t.me/pantekyks")
 
-@bot.message_handler(commands=['audio'])
-def send_audio(message):
-        url = pafy.new(message.text.replace("/mp3", ""))
+@bot.message_handler(commands=['mp3'])
+def send_music(message):
+        url = pafy.new(message.text.replace("/mp3 ", "/yt"))
         bot.send_message(message.chat.id, url.title)
         bot.send_message(message.chat.id, "Please Wait Upload....")
         fuk = url.getbestaudio()
-        fuk.download(f"{url.title}.mp3")
+        fuk.download(f'{url.title}.mp3')
 
         for i in os.listdir():
            if i.endswith(".mp3"):
@@ -31,4 +31,4 @@ def send_audio(message):
                os.remove(i)
 
 # bot run
-bot.infinity_polling()
+bot.infinity_polling(True)
