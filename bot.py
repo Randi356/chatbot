@@ -16,4 +16,5 @@ def commad1(bot, message):
     bot.send_message(message.chat.id "Hello Test")
 
 #running bot
+print("I AM ALIVE")
 bot.run()
