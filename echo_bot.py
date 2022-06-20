@@ -3,7 +3,7 @@
 # you fork editing // don't remove
 import telebot
 import time
-import urllib
+from urllib import request
 
 url='http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919672_584633251672188_179950734_n.jpg'
 f = open('out.jpg','wb')
