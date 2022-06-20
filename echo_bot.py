@@ -2,6 +2,7 @@
 # credits by @FFmpegNotInstalled
 # you fork editing // don't remove
 from telebot import *
+from youtubesearchpython import VideoSearch
 import os
 import pafy
 
@@ -29,6 +30,18 @@ def send_music(message):
                print(i)
                bot.send_audio(message.chat.id, open(i, "rb"))
                os.remove(i)
+
+@bot.message_handler(commads=['search'])
+def send_search(message):
+        data = message.text
+        video = VideoSearch(data.replace("search ", ""),
+        limit = 3)
+        x = video.result()
+
+        for i in range(3)
+            judul = x['result'][i]['tile']
+            url = x['result'][i]['link']
+            bot.send_message(message.chat.id, judul+"\n"+url)
 
 # bot run
 bot.polling()
