@@ -19,6 +19,62 @@ bot = TeleBot(TOKEN)
 def send_welcome(message):
 	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
 
+stringsList = {"Name": "Rendy", "languagues": "Python", "API": "pyTelegramBotAPI"}
+crossIcon = u"\u274c"
+
+rst button will be disappeared because editMessageText regenerate with available Dictionary details. Instead of deleting Pyton Dictionary you can call some database query.
+
+Here is the full code of the above examples.
+
+import telebot
+import ast
+import time
+from telebot import types
+
+bot = telebot.TeleBot("YOUR_BOT_API_KEY_HERE")
+
+stringList = {"Name": "John", "Language": "Python", "API": "pyTelegramBotAPI"}
+crossIcon = u"\u274C"
+
+def makeKeyboard():
+    markup = types.InlineKeyboardMarkup()
+
+    for key, value in stringList.items():
+        markup.add(types.InlineKeyboardButton(text=value,
+                                              callback_data="['value', '" + value + "', '" + key + "']"),
+        types.InlineKeyboardButton(text=crossIcon,
+                                   callback_data="['key', '" + key + "']"))
+
+    return markup
+
+@bot.message_handler(commands=['test'])
+def handle_command_adminwindow(message):
+    bot.send_message(chat_id=message.chat.id,
+                     text="Button",
+                     reply_markup=makeKeyboard(),
+                     parse_mode='HTML')
+
+@bot.callback_query_handler(func=lambda call: True)
+def handle_query(call):
+
+    if (call.data.startswith("['value'")):
+        print(f"call.data : {call.data} , type : {type(call.data)}")
+        print(f"ast.literal_eval(call.data) : {ast.literal_eval(call.data)} , type : {type(ast.literal_eval(call.data))}")
+        valueFromCallBack = ast.literal_eval(call.data)[1]
+        keyFromCallBack = ast.literal_eval(call.data)[2]
+        bot.answer_callback_query(callback_query_id=call.id,
+                              show_alert=True,
+                              text="You Clicked " + valueFromCallBack + " and key is " + keyFromCallBack)
+
+    if (call.data.startswith("['key'")):
+        keyFromCallBack = ast.literal_eval(call.data)[1]
+        del stringList[keyFromCallBack]
+        bot.edit_message_text(chat_id=call.message.chat.id,
+                              text="Here are the values of stringList",
+                              message_id=call.message.message_id,
+                              reply_markup=makeKeyboard(),
+                              parse_mode='HTML')
+
 @bot.message_handler(commands=['wsb'])
 def get_stocks(message):
   response = ""
