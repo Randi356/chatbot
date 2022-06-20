@@ -83,7 +83,6 @@ def link(message):
 
 
 # bot run
-bot.get_update()
 bot.set_update_listener(listener)
 bot.polling()
 while True:
