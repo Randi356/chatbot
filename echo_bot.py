@@ -1,4 +1,6 @@
 import telebot
+import time
+Import urllib
 
 bot = telebot.TeleBot("YOUR_TOKEN_BOTFATHER")
 
