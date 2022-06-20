@@ -38,7 +38,7 @@ def send_search(message):
         limit = 3)
         x = video.result()
 
-        for i in range(3)
+        for i in range(3):
             judul = x['result'][i]['tile']
             url = x['result'][i]['link']
             bot.send_message(message.chat.id, judul+"\n"+url)
