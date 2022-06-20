@@ -1,1 +1,1 @@
-worker : python3 rendy.py
+python3 rendy.py
