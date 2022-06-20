@@ -16,7 +16,7 @@ bot = telebot.TeleBot("1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8")
 def send_welcome(message):
 	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
 
-bot.message_handler(commands=['link'])
+@bot.message_handler(commands=['link'])
 def link(message):
         bot.send_message(message.chat.id, "Link https://t.me/pantekyks"
 
