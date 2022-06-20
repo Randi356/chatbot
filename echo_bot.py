@@ -36,10 +36,24 @@ apakah = [
 
 ]
 
-@bot.message_handler(ommands=['apakah'])
+bagi = [
+       "link @bokepindo",
+       "link2 @hentai",
+       "link3 @pornchannel",
+       "link4 @indiporn",
+       "link5 @sugiono"
+
+]
+
+@bot.message_handler(commands=['apakah'])
 def apakah_ask(message):
   chatid = message.chat.id
   bot.send_message(chatid, apakah)
+
+@bot.message_handler(commands=['bagi'])
+def bagi_ask(message):
+  chatid = message.chat.id
+  bot.send_message(chatid, bagi)
 
 @bot.message_handler(commands=['bokep'])
 def bokep_message(message):
