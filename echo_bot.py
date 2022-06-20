@@ -7,7 +7,7 @@ import os
 import pafy
 import logging
 import random
-import urllib.request
+import urllib3.request
 
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
