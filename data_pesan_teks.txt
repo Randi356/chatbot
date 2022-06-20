@@ -24,7 +24,7 @@ halo$                           = Hai;
 
 ^sekarang jam berapa$ |
 ^jam berapa sekarang$ |
-^ini jam berapa$ |
+^ini jam berapa?$ |
 ^jam berapa ini$                = Sekarang jam %jam : %menit;
 
 ^sekarang tanggal berapa$ |
