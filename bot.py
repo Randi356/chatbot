@@ -4,10 +4,10 @@
 from pyrogram import Client, filters
 
 bot = Client(
-    "my first projects"
+    "my first projects",
     api_id = 
      123456,
-    api_hash = ""
+    api_hash = "",
     bot_token = ""
 )
 
