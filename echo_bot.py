@@ -1,6 +1,11 @@
 import telebot
 import time
-Import urllib
+import urllib
+
+url='http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919672_584633251672188_179950734_n.jpg'
+f = open('out.jpg','wb')
+f.write(urllib.request.urlopen(url).read())
+f.close()
 
 bot = telebot.TeleBot("YOUR_TOKEN_BOTFATHER")
 
