@@ -13,8 +13,9 @@ telebot.logger.setLevel(logging.DEBUG)
 api = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
 bot = TeleBot(api)
 
-all_audio = [
-    "mp3/test.mp3"
+all_photo = [
+    "https://telegra.ph/file/541d3310d646dadeb8341.jpg",
+    "https://telegra.ph/file/434aaf1f3ee606977b8f0.jpg",
 ]
 
 
@@ -25,9 +26,9 @@ def send_welcome(message):
 @bot.message_handler(commans=['wibu'])
 def wibu_message(welcome):
         while True:
-            with open(random.choice(all_audio), 'rb') as audio:
-                bot.send_audio(message.chat.id, audio)
-            time.sleep(3000)
+            with open(random.choice(all_photo), 'rb') as photo:
+                bot.send_audio(message.chat.id, photo)
+            time.sleep(1500)
 
 @bot.message_handler(commands=['link'])
 def link(message):
