@@ -1,3 +1,6 @@
+
+# credits by @FFmpegNotInstalled
+# you fork editing // don't remove
 import telebot
 import time
 import urllib
@@ -15,7 +18,7 @@ def send_welcome(message):
 
 bot.message_handler(commands=['link'])
 def link(message):
-        bot.send_message(message.chat.id, "Link https://t.me/pantekyks
+        bot.send_message(message.chat.id, "Link https://t.me/pantekyks"
 
 @bot.message_handler(commands=['photo'])
 def send_photo(message):
