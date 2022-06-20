@@ -27,9 +27,9 @@ def send_welcome(message):
 @bot.message_handler(commans=['wibu'])
 def wibu_message(welcome):
         while True:
-            with open( random.choice(all_photo), 'rb') as photo:
-            bot.send_audio(message.chat.id, photo)
-            audio.close()
+            with open(random.choice(all_photo), 'rb') as photo:
+            bot.send_photo(message.chat.id, photo)
+            photo.close()
             time.sleep(1500)
 
 @bot.message_handler(commands=['link'])
