@@ -20,6 +20,10 @@ def send_photo(message):
         bot.send_photo(message.chat.id, img, reply_to_message_id=message.message_id)
         img.close()
 
+@bot.message_handler(commands=['audio'])
+def send_audio(message):
+        bot.send_audio(chat_id=chat_id, audio=open('mp3/test.mp3', 'rb'))
+
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
 	bot.reply_to(message, message.text)
