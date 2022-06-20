@@ -2,7 +2,7 @@
 # credits by @FFmpegNotInstalled
 # you fork editing // don't remove
 from telebot import *
-from youtubesearchpython import VideoSearch
+#from youtubesearchpython import VideoSearch
 import os
 import pafy
 import logging
