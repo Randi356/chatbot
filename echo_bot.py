@@ -23,7 +23,7 @@ def send_photo(message):
 @bot.message_handler(commands=['audio'])
 def send_audio(message):
         bot.send_audio(message.chat.id, 'upload_audio')
-        audio = open('mp3/test.mp3', 'rb'))
+        audio = open('mp3/test.mp3', 'rb')
         bot.send_audio(message.chat.id, audio, reply_to_message_id=message_id)
         audio.close()
 
