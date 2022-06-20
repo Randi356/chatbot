@@ -19,6 +19,7 @@ hai bot$                        = Hai %nama;
 halo$                           = Hai;
 ^hai$                           = Hai juga;
 ^bot$                           = ada yang bisa saya bantu?;
+^bokep                          = bokep goblok %nama;
 
 ^sekarang jam berapa$ |
 ^jam berapa sekarang$ |
