@@ -31,4 +31,4 @@ def send_music(message):
                os.remove(i)
 
 # bot run
-bot.infinity_polling(True)
+bot.polling()
