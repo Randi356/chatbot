@@ -19,10 +19,10 @@ bot = TeleBot(TOKEN)
 def send_welcome(message):
 	bot.reply_to(message, "i'am developer @FFmpegNotInstalled")
 
-@bot.message_handler(commads=['photo'])
-def send_photo(message):
-        photo_url <- "https://www.gstatic.com/webp/gallery/1.webp"
-        bot.send_photo(message.chat.id, photo=photo_url)
+@bot.message_handler(commads=['audio'])
+def text(message):
+        chatid = message.chat.id
+        bot.send_audio(chatid, open('mp3/test.mp3', 'rb'))
 
 @bot.message_handler(commands=['link'])
 def link(message):
