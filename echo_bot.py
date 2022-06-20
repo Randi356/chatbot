@@ -12,7 +12,7 @@ import yfinance as yf
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
 
-TOKEN = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
+TOKEN = "YOUR_TOKEN_BOTFATHER"
 bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
