@@ -1,3 +1,4 @@
 # required code 
-pyrogram
+yfinance
+pafy
 pyTelegramBotAPI
