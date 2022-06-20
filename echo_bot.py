@@ -7,12 +7,29 @@ import os
 import pafy
 import logging
 import random
+import urllib
+import io import BytesIO
+from PIL import Image
 
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
 
 api = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
 bot = TeleBot(api)
+
+url='http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919672_584633251672188_179950734_n.jpg'
+
+def listener(*messages):
+    for m in messages:
+        chatid = m.chat.id
+        if m.content_type == 'text':
+            text = m.text
+            name = fromUser.first_name
+            msgid = m.message_id
+            if(text.startwith('/photo')):
+                img = BytesIO(urllib.request.urlopen(url).read())
+                bot.send_chat_action(chatid, 'upload_photo')
+                bot.send_photo(chatid, img, reply_to_message=msgid)
 
 all_photo = [
     "https://telegra.ph/file/541d3310d646dadeb8341.jpg",
@@ -66,4 +83,8 @@ def link(message):
 
 
 # bot run
+bot.get_update()
+bot.set_update_listener(listener)
 bot.polling()
+while True:
+    time.sleep(1)
