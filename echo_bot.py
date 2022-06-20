@@ -8,7 +8,7 @@ import pafy
 import logging
 import random
 import urllib
-import io import BytesIO
+from io import BytesIO
 from PIL import Image
 
 # display errors 
