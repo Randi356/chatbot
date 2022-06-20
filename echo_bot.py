@@ -7,7 +7,7 @@ import os
 import pafy
 import logging
 import random
-import yfinance import yf
+from yfinance import yf
 
 # display errors 
 telebot.logger.setLevel(logging.DEBUG) 
