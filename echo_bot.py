@@ -1,11 +1,12 @@
 
 # credits by @FFmpegNotInstalled
 # you fork editing // don't remove
-import telebot
+from telebot import *
 import os
 import pafy
 
-bot = telebot.TeleBot("1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8")
+api = "1943236911:AAHM2v3QDW3MrFN7DrN_Q7uvHW07x-wUtt8"
+bot = TeleBot(api)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
