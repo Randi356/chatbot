@@ -15,7 +15,7 @@ bot = TeleBot(api)
 
 all_photo = [
     "https://telegra.ph/file/541d3310d646dadeb8341.jpg",
-    "https://telegra.ph/file/434aaf1f3ee606977b8f0.jpg",
+    "https://telegra.ph/file/434aaf1f3ee606977b8f0.jpg"
 ]
 
 
