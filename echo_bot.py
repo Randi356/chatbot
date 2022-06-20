@@ -18,7 +18,7 @@ def link(message):
 
 @bot.message_handler(commands=['mp3'])
 def send_music(message):
-        url = pafy.new(message.text.replace("/mp3 ", "/yt"))
+        url = pafy.new(message.text.replace("/mp3 ", ""))
         bot.send_message(message.chat.id, url.title)
         bot.send_message(message.chat.id, "Please Wait Upload....")
         fuk = url.getbestaudio()
