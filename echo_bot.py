@@ -22,7 +22,7 @@ def send_welcome(message):
 @bot.message_handler(commads=['audio'])
 def text(message):
         chatid = message.chat.id
-        bot.send_audio(chatid, open('mp3/test.mp3', 'rb'))
+        bot.send_audio(chatid, open('test.mp3', 'rb'))
 
 @bot.message_handler(commands=['link'])
 def link(message):
